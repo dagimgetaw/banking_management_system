@@ -158,6 +158,36 @@ public class Login extends JPanel {
         rightPanel.add(loginBtn);
         rightPanel.add(registerLabel);
 
+        // Add login button click handler
+        loginBtn.addActionListener(e -> {
+            String email = emailField.getText().trim();
+            String password = new String(passwordField.getPassword()).trim();
+
+            if (email.isEmpty() || password.isEmpty()) {
+                JOptionPane.showMessageDialog(this,
+                    "Please enter both email and password",
+                    "Login Error",
+                    JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Try to login the user
+            banking.db.Database.UserData userData = banking.db.Database.loginUser(email, password);
+            if (userData != null) {
+                JOptionPane.showMessageDialog(this,
+                    "Welcome back, " + userData.firstName + "!",
+                    "Login Successful",
+                    JOptionPane.INFORMATION_MESSAGE);
+                // Navigate to user profile
+                Main.mainFrame.setContentPane(new profile.User(userData));
+                Main.mainFrame.revalidate();
+            } else {
+                JOptionPane.showMessageDialog(this,
+                    "Invalid email or password",
+                    "Login Error",
+                    JOptionPane.ERROR_MESSAGE);
+            }
+        });
         // Security message at bottom
         JLabel securityMessage = new JLabel("<html><center>Your security is our priority. This site uses 256-bit SSL encryption.</center></html>");
         securityMessage.setFont(new Font("Segoe UI", Font.PLAIN, 10));
