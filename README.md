@@ -100,13 +100,3 @@ git clone https://github.com/dagimgetaw/banking_management_system.git
 - Database operations are atomic
 - Session management ensures secure access
 
-## Future Improvements
-
-- [ ] Add password reset functionality
-- [ ] Implement email verification
-- [ ] Add transaction history
-- [ ] Implement account statements
-- [ ] Add admin panel
-- [ ] Implement real-time notifications
-- [ ] Add multi-currency support
-- [ ] Implement interest calculation
