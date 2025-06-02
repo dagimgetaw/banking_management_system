@@ -4,7 +4,6 @@ import banking.auth.Login;
 import javax.swing.*;
 import java.awt.*;
 
-
 public class Main {
     public static JFrame mainFrame;
 
