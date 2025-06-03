@@ -16,7 +16,7 @@ public class Main {
         mainFrame.setSize(screenSize.width, screenSize.height);
 
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainFrame.setLayout(null); // or you can use layout managers later
+        mainFrame.setLayout(null);
         mainFrame.setVisible(true);
 
         // Load login screen
